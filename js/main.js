@@ -96,7 +96,7 @@
     });
     railList.innerHTML = targets.map(function (el) {
       var label = useHeadings ? (el.classList.contains('glance') ? $('summary span', el) : el) : $('.ph', el);
-      return '<li><a href="#' + el.id + '"><i aria-hidden="true"></i><span>' +
+      return '<li><a class="rs" href="#' + el.id + '"><i aria-hidden="true"></i><span>' +
         (label ? label.textContent : el.id) + '</span></a></li>';
     }).join('');
     var body = $('.tbody', section);
