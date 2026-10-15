@@ -1,0 +1,421 @@
+{
+    "id": "Exxat.Evaluation.LVLI_FWSSLOBJ_BinghamtonOT",
+    "workflowId": "Exxat.Evaluation.LVLI_FWSSLOBJ_BinghamtonOT",
+    "label": "Evaluation",
+    "partitionKey": "Exxat",
+    "parentId": "Exxat.Standard.Evaluation",
+    "entityName": "Exxat.Services.Kinesis.Entity.Models.Workflows.Workflow",
+    "steps": [
+        {
+            "stepId": "Step.Evaluation.SupervisorReview",
+            "name": "Get Started",
+            "stepType": "Start",
+            "color": "#ececec",
+            "summaries": [
+                {
+                    "summaryId": "Summary.LVLI_FWSSLOBJ_BinghamtonOT.Delegate",
+                    "teamId": "Team.Delegate"
+                },
+                {
+                    "summaryId": "Summary.LVLI_FWSSLOBJ_BinghamtonOT.Delegate",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.LVLI_FWSSLOBJ_BinghamtonOT.Clear",
+                    "label": "Clear All",
+                    "icon": "fa fa-save",
+                    "color": "yellow-casablanca",
+                    "type": "CLEAR",
+                    "**nextcontent": "",
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Responses have been cleared successfully.",
+                            "failureMessage": "Form could not be cleared successfully, please try again.",
+                            "duration": 3000,
+                            "position": "bottom"
+                        }
+                    },
+                    "moveId": "",
+                    "teams": [
+                        {
+                            "teamId": "Team.Delegate"
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Delegate"
+                        }
+                    ]
+                },
+                {
+                    "actionId": "Action.LVLI_FWSSLOBJ_BinghamtonOT.Save",
+                    "label": "Save",
+                    "icon": "fa fa-save",
+                    "color": "yellow-casablanca",
+                    "type": "SAVE",
+                    "**nextcontent": "",
+                    "moveId": "Move.Evaluation.SupervisorReviewToSupervisorSave",
+                    "teams": [
+                        {
+                            "teamId": "Team.Delegate"
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Delegate"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form saved successfully.",
+                            "failureMessage": "Form save unsuccessful.",
+                            "duration": 3000,
+                            "position": "bottom"
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.LVLI_FWSSLOBJ_BinghamtonOT.DelegateSubmit",
+                    "label": "Submit",
+                    "icon": "fa fa-paste",
+                    "color": "green",
+                    "delegateType": "",
+                    "type": "SUBMIT",
+                    "**nextcontent": "",
+                    "isPrimaryActorSubmit": true,
+                    "moveId": "Move.Evaluation.SupervisorReviewToAdminReview",
+                    "teams": [
+                        {
+                            "teamId": "Team.Delegate"
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Delegate"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form submitted successfully.",
+                            "failureMessage": "Form submit unsuccessful.",
+                            "duration": 3000,
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to submit the form?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "stepId": "Step.Evaluation.SupervisorSave",
+            "name": "In Progress by Educator",
+            "stepType": "Normal",
+            "color": "#c6f2ff",
+            "summaries": [
+                {
+                    "summaryId": "Summary.LVLI_FWSSLOBJ_BinghamtonOT.Delegate",
+                    "teamId": "Team.Delegate"
+                },
+                {
+                    "summaryId": "Summary.LVLI_FWSSLOBJ_BinghamtonOT.Delegate",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.LVLI_FWSSLOBJ_BinghamtonOT.Clear",
+                    "label": "Clear All",
+                    "icon": "fa fa-save",
+                    "color": "yellow-casablanca",
+                    "type": "CLEAR",
+                    "**nextcontent": "",
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Responses have been cleared successfully.",
+                            "failureMessage": "Form could not be cleared successfully, please try again.",
+                            "duration": 3000,
+                            "position": "bottom"
+                        }
+                    },
+                    "moveId": "",
+                    "teams": [
+                        {
+                            "teamId": "Team.Delegate"
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Delegate"
+                        }
+                    ]
+                },
+                {
+                    "actionId": "Action.LVLI_FWSSLOBJ_BinghamtonOT.Save",
+                    "label": "Save",
+                    "icon": "fa fa-save",
+                    "color": "yellow-casablanca",
+                    "type": "SAVE",
+                    "**nextcontent": "",
+                    "teams": [
+                        {
+                            "teamId": "Team.Delegate"
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Delegate"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form saved successfully.",
+                            "failureMessage": "Form save unsuccessful.",
+                            "duration": 3000,
+                            "position": "bottom"
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.LVLI_FWSSLOBJ_BinghamtonOT.DelegateSubmit",
+                    "label": "Submit",
+                    "icon": "fa fa-paste",
+                    "color": "green",
+                    "type": "SUBMIT",
+                    "**nextcontent": "",
+                    "delegateType": "",
+                    "isPrimaryActorSubmit": true,
+                    "moveId": "Move.Evaluation.SupervisorSaveToAdminReview",
+                    "teams": [
+                        {
+                            "teamId": "Team.Delegate"
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Delegate"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form submitted successfully.",
+                            "failureMessage": "Form submit unsuccessful.",
+                            "duration": 3000,
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to submit the form?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "stepId": "Step.Evaluation.AdminReview",
+            "name": "Pending School Review",
+            "stepType": "Normal",
+            "color": "#ffeeb4",
+            "summaries": [
+                {
+                    "summaryId": "Summary.LVLI_FWSSLOBJ_BinghamtonOT.DelegateDisplay",
+                    "teamId": "Team.Delegate"
+                },
+                {
+                    "summaryId": "Summary.LVLI_FWSSLOBJ_BinghamtonOT.AdminReview",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.LVLI_FWSSLOBJ_BinghamtonOT.AdminReview",
+                    "label": "Review",
+                    "icon": "fa fa-paste",
+                    "color": "green",
+                    "type": "SUBMIT",
+                    "**nextcontent": "",
+                    "moveId": "Move.Evaluation.AdminReviewToComplete",
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form reviewed successfully.",
+                            "failureMessage": "Form review unsuccessful.",
+                            "duration": 3000,
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to review the form?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.LVLI_FWSSLOBJ_BinghamtonOT.CIUnsubmit",
+                    "label": "Un-Submit to Educator",
+                    "icon": "fa fa-paste",
+                    "color": "green",
+                    "type": "UNSUBMIT",
+                    "delegateType": "Email",
+                    "**nextcontent": "",
+                    "moveId": "Move.Evaluation.AdminReviewToSupervisorSave",
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form un-submitted successfully.",
+                            "failureMessage": "Form un-submit unsuccessful.",
+                            "duration": 3000,
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to un-submit the form to Educator?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "stepId": "Step.Evaluation.Complete",
+            "name": "Reviewed",
+            "stepType": "Normal",
+            "color": "#6fcf97",
+            "summaries": [
+                {
+                    "summaryId": "Summary.LVLI_FWSSLOBJ_BinghamtonOT.DelegateDisplay",
+                    "teamId": "Team.Delegate"
+                },
+                {
+                    "summaryId": "Summary.LVLI_FWSSLOBJ_BinghamtonOT.AdminReview",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.LVLI_FWSSLOBJ_BinghamtonOT.AdminSubmit",
+                    "label": "Submit",
+                    "icon": "fa fa-save",
+                    "color": "yellow-casablanca",
+                    "type": "SUBMIT",
+                    "**nextcontent": "",
+                    "moveId": "",
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form submitted successfully.",
+                            "failureMessage": "Form submit unsuccessful.",
+                            "duration": 3000,
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to submit the form?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.LVLI_FWSSLOBJ_BinghamtonOT.CIunsubmit",
+                    "label": "Un-Submit to Educator",
+                    "icon": "fa fa-paste",
+                    "color": "green",
+                    "type": "UNSUBMIT",
+                    "delegateType": "Email",
+                    "**nextcontent": "",
+                    "moveId": "Move.Evaluation.CompleteToSupervisorSave",
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form  un-submitted successfully.",
+                            "failureMessage": "Form un-submit unsuccessful.",
+                            "duration": 3000,
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to un-submit the form to Educator?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

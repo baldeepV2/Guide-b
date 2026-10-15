@@ -1,0 +1,45 @@
+{
+    "name": "Alert.Admin.PMHNP_SSP",
+    "description": null,
+    "categoryId": "Evaluation",
+    "notificationId": "Evaluation.Action.Notification",
+    "subject": "{{{FeatureShortLabel}}} PMHNP - Student Self Evaluation Tool  is submitted to you",
+    "isDefault": false,
+    "layoutId": "University logo on the header and Exxat logo on the footer",
+    "content": [
+        {
+            "Name": "Body",
+            "Description": "This is template body",
+            "Content": "<br> <br>  Hi {{{RecieverName}}}, <br><br> The <b>{{{FeatureShortLabel}}}</b> is submitted by <b>{{{SenderFirstName}}}</b> <b>{{{SenderLastName}}}</b>. Please login to your account to perform the next steps<br> <br> This is related to the student <b>{{{TargetName}}}</b> for course <b>{{{CourseName}}}</b>, rotation </b>{{{RotationName}}}, <b>{{{PlacementStartDate}}} and {{{PlacementEndDate}}}.</b> <br><br>Thank you.<br>",
+            "Order": 2
+        },
+        {
+            "Name": "Header",
+            "Description": "This is template header",
+            "Content": "<div class=''><left><img alt='University logo' height='100' src='{{{TenantLogo}}}' style='width: auto;max-height: 100px;'></left></div>",
+            "Order": 1
+        },
+        {
+            "Name": "Footer",
+            "Description": "This is template footer",
+            "Content": "<footer><img alt='Exxat logo' src='https://exxatfusion.blob.core.windows.net/asset/exxat-pink-small.png'><br/></footer>",
+            "Order": 3
+        }
+    ],
+    "dynamicTemplateNames": [],
+    "dataJsonSchema": "{}",
+    "securityPredicate": {
+        "tenantId": "Ualabama-Tuscaloosa-Nursing",
+        "owningOrganizationUnit": "D060"
+    },
+    "createdBy": null,
+    "updatedBy": null,
+    "createdDatetime": "2025-11-28T12:08:53+00:00",
+    "updatedDatetime": null,
+    "fileCollectionKey": null,
+    "partitionKey": "Ualabama-Tuscaloosa-NursingD060",
+    "entityName": null,
+    "id": "79c3ae70-1677-41fa-a72a-22c865188ec2",
+    "_id": "79c3ae70-1677-41fa-a72a-22c865188ec2",
+    "type": "Email"
+}

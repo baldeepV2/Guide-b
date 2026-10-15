@@ -1,0 +1,34 @@
+{
+    "firstName": "Muskan",
+    "lastName": "Sharma",
+    "email": "muskan.sharma@exxat.com",
+    "entityName": "Exxat.Services.HyperDrive.Entity.Models.Users.StakeHolder",
+    "features": [
+        {
+            "featureId": "Exxat.Student-Evaluation.CERPEF_Urology"
+        },
+        {
+            "featureId": "Exxat.Student-Evaluation.CERPEF_CC_HSU"
+        },
+        {
+            "featureId": "Exxat.Student-Evaluation.CERPEF_POS_HSU"
+        }
+    ],
+    "appId": "Exxat.Evaluation",
+    "userType": "Administrator",
+    "notifications": [
+        "LowScore",
+        "Review",
+        "Delegator"
+    ],
+    "teams": [
+        {
+            "teamId": "Team.Admin"
+        }
+    ],
+    "securityContext": {
+        "tenantId": "Exxat-Configuration",
+        "owningOrganizationUnit": "D119"
+    },
+    "partitionKey": "Exxat-Configuration"
+}

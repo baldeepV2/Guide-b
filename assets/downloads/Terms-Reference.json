@@ -1,0 +1,41 @@
+{
+    "workflows": [
+        {
+            "workflowId": "Exxat.Evaluation.Nur412_CETCadwellUndergrad",
+            "layoutId": "Evaluation.Nur412_CETCadwellUndergrad.Layout",
+            "label": "NUR 409 - Clinical Evaluation Tool",
+            "default": true,
+            "terms": [
+                {
+                    "termId": "midterm",
+                    "nextTermToSwitch": "finalterm",
+                    "termLabel": "Midterm",
+                    "termStatusLabel": "Midterm",
+                    "color": "#80cbc4",
+                    "stepIdToSwitchTerm": "Step.Evaluation.MidtermReview",
+                    "moveIdsToSwitchTerm": [
+                        "Move.Evaluation.MidtermReviewToFacultySaveFinal",
+                        "Move.Evaluation.MidtermReviewToStudentReviewFinal"
+                    ],
+                    "instances": [
+                        "StudentMidterm",
+                        "FacultyMidterm"
+                    ]
+                },
+                {
+                    "termId": "finalterm",
+                    "termLabel": "Final",
+                    "color": "#ffe082",
+                    "termStatusLabel": "Final",
+                    "stepIdToSwitchTerm": null,
+                    "nextTermToSwitch": null,
+                    "moveIdsToSwitchTerm": null,
+                    "instances": [
+                        "FacultyFinalterm",
+                        "StudentFinalterm"
+                    ]
+                }
+            ]
+        }
+    ]
+}

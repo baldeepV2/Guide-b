@@ -1,0 +1,548 @@
+{
+    "id": "Exxat.Evaluation.CapExpMenEval_WashOT",
+    "workflowId": "Exxat.Evaluation.CapExpMenEval_WashOT",
+    "label": "Evaluation",
+    "partitionKey": "Exxat",
+    "parentId": "Exxat.Standard.Evaluation",
+    "entityName": "Exxat.Services.Kinesis.Entity.Models.Workflows.Workflow",
+    "steps": [
+        {
+            "stepId": "Step.Evaluation.SupervisorReview",
+            "stepType": "Start",
+            "color": "#ececec",
+            "name": "Get Started",
+            "summaries": [
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.Delegate",
+                    "teamId": "Team.Delegate"
+                },
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.Delegate",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.CapExpMenEval_WashOT.CLEAR",
+                    "label": "Clear all",
+                    "color": "",
+                    "type": "CLEAR",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "",
+                    "isPrimaryActorSubmit": false,
+                    "teams": [
+                        {
+                            "teamId": "Team.Delegate",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Delegate"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Responses have been cleared successfully.",
+                            "failureMessage": "Form could not be cleared successfully, please try again.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapExpMenEval_WashOT.SAVE",
+                    "label": "Save",
+                    "color": "",
+                    "type": "SAVE",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.SupervisorReviewToSupervisorSave",
+                    "isPrimaryActorSubmit": false,
+                    "teams": [
+                        {
+                            "teamId": "Team.Delegate",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Delegate"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form saved successfully.",
+                            "failureMessage": "Form save unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapExpMenEval_WashOT.DELEGATESUBMIT",
+                    "label": "Submit",
+                    "color": "",
+                    "type": "SUBMIT",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.SupervisorReviewToStudentReview",
+                    "isPrimaryActorSubmit": true,
+                    "teams": [
+                        {
+                            "teamId": "Team.Delegate",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Delegate"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form submitted successfully.",
+                            "failureMessage": "Form submit unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to submit the form to student for review?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "stepId": "Step.Evaluation.SupervisorSave",
+            "stepType": "Normal",
+            "color": "#c6f2ff",
+            "name": "In Progress by Preceptor",
+            "summaries": [
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.Delegate",
+                    "teamId": "Team.Delegate"
+                },
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.Delegate",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.CapExpMenEval_WashOT.CLEAR",
+                    "label": "Clear all",
+                    "color": "",
+                    "type": "CLEAR",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "",
+                    "isPrimaryActorSubmit": false,
+                    "teams": [
+                        {
+                            "teamId": "Team.Delegate",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Delegate"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Responses have been cleared successfully.",
+                            "failureMessage": "Form could not be cleared successfully, please try again.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapExpMenEval_WashOT.SAVE",
+                    "label": "Save",
+                    "color": "",
+                    "type": "SAVE",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "",
+                    "isPrimaryActorSubmit": false,
+                    "teams": [
+                        {
+                            "teamId": "Team.Delegate",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Delegate"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form saved successfully.",
+                            "failureMessage": "Form save unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapExpMenEval_WashOT.DELEGATESUBMIT",
+                    "label": "Submit",
+                    "color": "",
+                    "type": "SUBMIT",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.SupervisorSaveToStudentReview",
+                    "isPrimaryActorSubmit": true,
+                    "teams": [
+                        {
+                            "teamId": "Team.Delegate",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Delegate"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form submitted successfully.",
+                            "failureMessage": "Form submit unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to submit the form to student for review?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "stepId": "Step.Evaluation.StudentReview",
+            "stepType": "Normal",
+            "color": "#ffeeb4",
+            "name": "Pending Student Review",
+            "summaries": [
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.Student",
+                    "teamId": "Team.Student"
+                },
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.DelegateDisplay",
+                    "teamId": "Team.Delegate"
+                },
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.Student",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.CapExpMenEval_WashOT.STUDENTREVIEW",
+                    "label": "Review",
+                    "color": "",
+                    "type": "SUBMIT",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.StudentReviewToAdminReview",
+                    "isPrimaryActorSubmit": false,
+                    "teams": [
+                        {
+                            "teamId": "Team.Student",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Student"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form reviewed successfully.",
+                            "failureMessage": "Form review unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to review the form?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapExpMenEval_WashOT.UNSUBMITSUPERVISOR",
+                    "label": "Un-submit to Preceptor",
+                    "color": "",
+                    "type": "UNSUBMIT",
+                    "delegateType": "Email",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.StudentReviewToSupervisorSave",
+                    "isPrimaryActorSubmit": false,
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": ""
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form un-submitted successfully.",
+                            "failureMessage": "Form un-submit unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to un-submit the form to Preceptor?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "stepId": "Step.Evaluation.AdminReview",
+            "stepType": "Normal",
+            "color": "#ffeeb4",
+            "name": "Pending School Review",
+            "summaries": [
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.StudentDisplay",
+                    "teamId": "Team.Delegate"
+                },
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.StudentDisplay",
+                    "teamId": "Team.Student"
+                },
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.Admin",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.CapExpMenEval_WashOT.ADMINREVIEW",
+                    "label": "Review",
+                    "color": "",
+                    "type": "SUBMIT",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.AdminReviewToComplete",
+                    "isPrimaryActorSubmit": false,
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": ""
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form reviewed successfully.",
+                            "failureMessage": "Form review unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to review the form?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapExpMenEval_WashOT.UNSUBMIT",
+                    "label": "Un-submit to Preceptor",
+                    "color": "",
+                    "type": "UNSUBMIT",
+                    "delegateType": "Email",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.AdminReviewToSupervisorSave",
+                    "isPrimaryActorSubmit": false,
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": ""
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form un-submitted successfully.",
+                            "failureMessage": "Form un-submit unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to un-submit the form to Preceptor?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "stepId": "Step.Evaluation.Complete",
+            "stepType": "Normal",
+            "color": "#6fcf97",
+            "name": "Reviewed",
+            "summaries": [
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.StudentDisplay",
+                    "teamId": "Team.Delegate"
+                },
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.StudentDisplay",
+                    "teamId": "Team.Student"
+                },
+                {
+                    "summaryId": "Summary.CapExpMenEval_WashOT.Admin",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.CapExpMenEval_WashOT.ADMINSUBMIT",
+                    "label": "Submit",
+                    "color": "",
+                    "type": "SUBMIT",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "",
+                    "isPrimaryActorSubmit": false,
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": ""
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form submitted successfully.",
+                            "failureMessage": "Form submit unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to submit the form with changes?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapExpMenEval_WashOT.COMPLETEUNSUBMIT",
+                    "label": "Un-submit to Preceptor",
+                    "color": "",
+                    "type": "UNSUBMIT",
+                    "delegateType": "Email",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.CompleteToSupervisorSave",
+                    "isPrimaryActorSubmit": false,
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": ""
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form un-submitted successfully.",
+                            "failureMessage": "Form un-submit unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to un-submit the form to Preceptor?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

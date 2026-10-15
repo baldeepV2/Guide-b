@@ -1,0 +1,428 @@
+{
+    "id": "Exxat.Evaluation.CapStudSelfAssRef_WashOT",
+    "workflowId": "Exxat.Evaluation.CapStudSelfAssRef_WashOT",
+    "label": "Evaluation",
+    "partitionKey": "Exxat",
+    "parentId": "Exxat.Standard.Evaluation",
+    "entityName": "Exxat.Services.Kinesis.Entity.Models.Workflows.Workflow",
+    "steps": [
+        {
+            "stepId": "Step.Evaluation.Start",
+            "stepType": "Start",
+            "color": "#ececec",
+            "name": "Get Started",
+            "summaries": [
+                {
+                    "summaryId": "Summary.CapStudSelfAssRef_WashOT.Student",
+                    "teamId": "Team.Student"
+                },
+                {
+                    "summaryId": "Summary.CapStudSelfAssRef_WashOT.Student",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.CapStudSelfAssRef_WashOT.CLEAR",
+                    "label": "Clear all",
+                    "color": "",
+                    "type": "CLEAR",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "",
+                    "teams": [
+                        {
+                            "teamId": "Team.Student",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Student"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Responses have been cleared successfully.",
+                            "failureMessage": "Form could not be cleared successfully, please try again.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapStudSelfAssRef_WashOT.SAVE",
+                    "label": "Save",
+                    "color": "",
+                    "type": "SAVE",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.StartToSave",
+                    "teams": [
+                        {
+                            "teamId": "Team.Student",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Student"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form saved successfully.",
+                            "failureMessage": "Form save unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapStudSelfAssRef_WashOT.STUDENTSUBMIT",
+                    "label": "Submit",
+                    "color": "",
+                    "type": "SUBMIT",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.StartToAdminReview",
+                    "isPrimaryActorSubmit": true,
+                    "teams": [
+                        {
+                            "teamId": "Team.Student",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Student"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form submitted successfully.",
+                            "failureMessage": "Form submit unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to submit the form?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "stepId": "Step.Evaluation.Save",
+            "stepType": "Normal",
+            "color": "#c6f2ff",
+            "name": "In Progress by Student",
+            "summaries": [
+                {
+                    "summaryId": "Summary.CapStudSelfAssRef_WashOT.Student",
+                    "teamId": "Team.Student"
+                },
+                {
+                    "summaryId": "Summary.CapStudSelfAssRef_WashOT.Student",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.CapStudSelfAssRef_WashOT.CLEAR",
+                    "label": "Clear all",
+                    "color": "",
+                    "type": "CLEAR",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "",
+                    "teams": [
+                        {
+                            "teamId": "Team.Student",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Student"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Responses have been cleared successfully.",
+                            "failureMessage": "Form could not be cleared successfully, please try again.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapStudSelfAssRef_WashOT.SAVE",
+                    "label": "Save",
+                    "color": "",
+                    "type": "SAVE",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "",
+                    "teams": [
+                        {
+                            "teamId": "Team.Student",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Student"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form saved successfully.",
+                            "failureMessage": "Form save unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapStudSelfAssRef_WashOT.STUDENTSUBMIT",
+                    "label": "Submit",
+                    "color": "",
+                    "type": "SUBMIT",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.SaveToAdminReview",
+                    "isPrimaryActorSubmit": true,
+                    "teams": [
+                        {
+                            "teamId": "Team.Student",
+                            "behalfOf": ""
+                        },
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": "Student"
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form submitted successfully.",
+                            "failureMessage": "Form submit unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to submit the form?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "stepId": "Step.Evaluation.AdminReview",
+            "stepType": "Normal",
+            "color": "#ffeeb4",
+            "name": "Pending School Review",
+            "summaries": [
+                {
+                    "summaryId": "Summary.CapStudSelfAssRef_WashOT.StudentDisplay",
+                    "teamId": "Team.Student"
+                },
+                {
+                    "summaryId": "Summary.CapStudSelfAssRef_WashOT.Admin",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.CapStudSelfAssRef_WashOT.ADMINREVIEW",
+                    "label": "Review",
+                    "color": "",
+                    "type": "SUBMIT",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.AdminReviewToComplete",
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": ""
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form reviewed successfully.",
+                            "failureMessage": "Form review unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to review the form?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapStudSelfAssRef_WashOT.UNSUBMIT",
+                    "label": "Un-submit to Student",
+                    "color": "",
+                    "type": "UNSUBMIT",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.AdminReviewToSave",
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": ""
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form un-submitted successfully.",
+                            "failureMessage": "Form un-submit unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to un-submit the form to student?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "stepId": "Step.Evaluation.Complete",
+            "stepType": "Normal",
+            "color": "#6fcf97",
+            "name": "Reviewed",
+            "summaries": [
+                {
+                    "summaryId": "Summary.CapStudSelfAssRef_WashOT.StudentDisplay",
+                    "teamId": "Team.Student"
+                },
+                {
+                    "summaryId": "Summary.CapStudSelfAssRef_WashOT.Admin",
+                    "teamId": "Team.Admin"
+                }
+            ],
+            "actions": [
+                {
+                    "actionId": "Action.CapStudSelfAssRef_WashOT.ADMINSUBMIT",
+                    "label": "Submit",
+                    "color": "",
+                    "type": "SUBMIT",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "",
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": ""
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form submitted successfully.",
+                            "failureMessage": "Form submit unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to submit the form?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "actionId": "Action.CapStudSelfAssRef_WashOT.UNSUBMIT",
+                    "label": "Un-submit to Student",
+                    "color": "",
+                    "type": "UNSUBMIT",
+                    "delegateType": "",
+                    "**nextContent": "",
+                    "moveId": "Move.Evaluation.CompleteToSave",
+                    "teams": [
+                        {
+                            "teamId": "Team.Admin",
+                            "behalfOf": ""
+                        }
+                    ],
+                    "events": {
+                        "snackbar": {
+                            "successMessage": "Form un-submitted successfully.",
+                            "failureMessage": "Form un-submit unsuccessful.",
+                            "duration": "3000",
+                            "position": "bottom"
+                        },
+                        "dialogBox": {
+                            "message": "Are you sure you want to un-submit the form to student?",
+                            "commands": [
+                                {
+                                    "label": "OK",
+                                    "type": "success",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Cancel",
+                                    "type": "cancel",
+                                    "color": "yellow-casablanca"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

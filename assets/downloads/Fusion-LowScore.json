@@ -1,0 +1,45 @@
+{
+    "name": "Ualabama-Tuscaloosa-Nursing.D060.Exxat.Student-Evaluation.PMHNP_SECS",
+    "description": null,
+    "categoryId": "Evaluation",
+    "notificationId": "Immediate.LowScore",
+    "subject": "PMHNP - Student Evaluation of Clinical Site - Low Score Alert for {{{FirstName}}} {{{LastName}}}",
+    "isDefault": false,
+    "layoutId": "University logo on the header and Exxat logo on the footer",
+    "content": [
+        {
+            "Name": "Body",
+            "Description": "This is template body",
+            "Content": "Hello {{{RecieverName}}},<br><br>This notification is to inform you that {{{FirstName}}} {{{LastName}}} has received a score below the defined threshold value of <b>{{{Value}}}</b> on <b>PMHNP - Student Evaluation of Clinical Site</b> form.<h3>Evaluation Details</h3><ul style='padding-left:30px'><li><b>Course:</b> {{{CourseCode}}} - {{{CourseName}}}<li><b>Clinical Rotation:</b> {{{RotationName}}} ({{{RotationStartDate}}} - {{{RotationEndDate}}})<li><b>Clinical Site: </b>{{{LocationName}}} - {{{SettingName}}}</ul>We recommend reviewing this feature to determine any required follow-up actions in accordance with your program’s academic and clinical policies.<br><br>If you have any questions or require additional context, please refer to the feature details within the system.<br><br>Thank you,",
+            "Order": 2
+        },
+        {
+            "Name": "Header",
+            "Description": "This is template header",
+            "Content": "<div class=''><left><img alt='University logo' height='100' src='{{{TenantLogo}}}' style='width: auto;max-height: 100px;'></left></div>",
+            "Order": 1
+        },
+        {
+            "Name": "Footer",
+            "Description": "This is template footer",
+            "Content": "<footer><img alt='Exxat logo' src='https://exxatfusion.blob.core.windows.net/asset/exxat-pink-small.png'></footer>",
+            "Order": 3
+        }
+    ],
+    "dynamicTemplateNames": [],
+    "dataJsonSchema": "{}",
+    "securityPredicate": {
+        "tenantId": "Ualabama-Tuscaloosa-Nursing",
+        "owningOrganizationUnit": "D060"
+    },
+    "createdBy": null,
+    "updatedBy": null,
+    "createdDatetime": "2026-02-03T10:06:08+05:30",
+    "updatedDatetime": null,
+    "fileCollectionKey": null,
+    "partitionKey": "Ualabama-Tuscaloosa-NursingD060",
+    "entityName": null,
+    "id": "081183c3-b7b7-4b78-82d0-0a1c4f3eb64a",
+    "_id": "081183c3-b7b7-4b78-82d0-0a1c4f3eb64a",
+    "type": "Email"
+}

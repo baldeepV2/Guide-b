@@ -1,0 +1,45 @@
+{
+    "name": "Alert.Admin.PMHNP_SSP",
+    "description": null,
+    "categoryId": "Evaluation",
+    "notificationId": "Evaluation.Response.Request",
+    "subject": "Response based notification - PMHNP - Student Evaluation of Preceptor",
+    "isDefault": false,
+    "layoutId": "University logo on the header and Exxat logo on the footer",
+    "content": [
+        {
+            "Name": "Body",
+            "Description": "This is template body",
+            "Content": "<p>Hello,<br /><br />Student: {{{TargetName}}} <br /><br /> Site Name: {{{SiteName}}} <br /><br /> Placement Dates: {{{PlacementStartDate}}} - {{{PlacementEndDate}}} <br /><br /> Please be aware that the following responses were entered on the <strong>{{{FeatureShortLabel}}}</strong>. <br /><br /> [$FieldNotificationTable$] <br /><br />Thank You.</p>",
+            "Order": 2
+        },
+        {
+            "Name": "Header",
+            "Description": "This is template header",
+            "Content": "<div class=''><left><img alt='University logo' height='100' src='{{{TenantLogo}}}' style='width: auto;max-height: 100px;'></left></div>",
+            "Order": 1
+        },
+        {
+            "Name": "Footer",
+            "Description": "This is template footer",
+            "Content": "<footer><img alt='Exxat logo' src='https://exxatfusion.blob.core.windows.net/asset/exxat-pink-small.png'><br/></footer>",
+            "Order": 3
+        }
+    ],
+    "dynamicTemplateNames": [],
+    "dataJsonSchema": "{}",
+    "securityPredicate": {
+        "tenantId": "Ualabama-Tuscaloosa-Nursing",
+        "owningOrganizationUnit": "D060"
+    },
+    "createdBy": null,
+    "updatedBy": null,
+    "createdDatetime": "2024-09-22T05:48:04.2440928Z",
+    "updatedDatetime": null,
+    "fileCollectionKey": null,
+    "partitionKey": "Ualabama-Tuscaloosa-NursingD060",
+    "entityName": null,
+    "id": "c6ca137d-9f88-4716-879a-918d1cc22ac9",
+    "_id": "c6ca137d-9f88-4716-879a-918d1cc22ac9",
+    "type": "Email"
+}
